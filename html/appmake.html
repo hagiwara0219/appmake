@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>メモアプリ</title>
+
+    <link rel="stylesheet" type="text/css" href="">
+
+    <!-- css 記述部分 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #memo-container {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 200px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-family: "MS Mincho", serif;
+            /* 明朝体の指定 */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>あぷり </h1>
+    <h1>画像素材</h1>
+    <h1>フォント</h1>
+    <div class="memo-cotainer">
+
+
+        <textarea id="memo-text"></textarea>
+
+        <button id="save-button">保存</button>
+
+    </div>
+    あ
+
+    <script>
+
+        window.onload = function () {
+            const memoText = localStorage.getItem('memo');
+            if (memoText) {
+                document.getElementById('memo-text').value = memoText;
+            }
+        };
+
+        // メモを保存する
+        document.getElementById('save-button').addEventListener('click', function () {
+            const memoText = document.getElementById('memo-text').value;
+            localStorage.setItem('memo', memoText);
+            alert('メモが保存されました！');
+        });
+    </script>
+</body>
+
+</html>
