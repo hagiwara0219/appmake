@@ -15,11 +15,5 @@
 
 
 
-const value = 1;
-if (value) {
-    console.log(true);
-} else {
-    console.log(false);
-}
 
 
